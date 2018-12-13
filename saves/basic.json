@@ -250,7 +250,7 @@
       "autoRun": 1,
       "background": false,
       "badge": 0,
-      "desc": "YLUI官方后台服务",
+      "desc": "官方后台服务",
       "icon": {
         "type": "fa",
         "content": "yoast",
@@ -273,7 +273,7 @@
         "height": "y*0.8-80",
         "width": "x*0.8"
       },
-      "title": "YLUI官方后台服务",
+      "title": "官方后台服务",
       "url": "https://www.26an.cn",
       "customTile": "",
       "urlRandomToken": true
