@@ -1,12 +1,12 @@
 window.YL = {
   info: {
-    softwareName: 'YLUI',
+    softwareName: '赤焰',
     version: "2.1.2",
     iconBtnStart: 'yoast',
-    author: 'Yuri2',
-    contactInformation: 'yuri2peter@qq.com',
-    officialWebsite: 'https://ylui.yuri2.cn',
-    copyrightDetail: 'YLUI已授权本产品使用。YLUI禁止任何未经作者授权的使用、修改、二次发布，包括从本产品中剥离YLUI独立使用等侵权行为，违者将追究法律责任。',
+    author: '赤焰',
+    contactInformation: '2596844541@qq.com',
+    officialWebsite: 'https://www.26an.cn',
+    copyrightDetail: '违者将追究法律责任。',
     otherStatements: '',
   },
   data: {},
