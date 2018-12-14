@@ -247,7 +247,7 @@
     },
     "yl-server": {
       "addressBar": false,
-      "autoRun": 1,
+      "autoRun": 0,
       "background": false,
       "badge": 0,
       "desc": "官方后台服务",
@@ -355,7 +355,7 @@
         "content": "G",
         "bg": "rgb(216,2,18)"
       },
-      "openMode": "normal",
+      "openMode": "outer",
       "plugin": false,
       "position": {
         "autoOffset": true,
