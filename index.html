@@ -23,7 +23,7 @@
 	<script id="nav-boxtmpl" type="text/x-dot-template">
 	<ul>
 	{{ for(var key in it) { }}
-	<li class="nav1"><a href="?id={{= it[key]["type_id"] }}">{{= it[key]["type_name"] }}</a></li>
+	<li class="nav1"><a data-id="{{= it[key]["type_id"] }}" href="javascript:void(0)">{{= it[key]["type_name"] }}</a></li>
 	{{ } }}
 	</ul>
 	</script>
