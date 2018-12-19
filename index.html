@@ -37,12 +37,16 @@
 	</script>
 	<script type="text/javascript">
 		var pg=1;
-		var wd="";
+		if (getString(wd)!=null){
+		  var wd=getString(wd);
+		}else{
+			var wd="";
+		}
 		var t="";
 		getData(pg,t,wd);
 		function getData(pg,t,wd){
 			$.ajax({
-		        url:"https://dy.26an.cn/api.php/provide/vod/?ac=detail&pg="+pg+"&t="+t+"&wd="+getString(wd),
+		        url:"https://dy.26an.cn/api.php/provide/vod/?ac=detail&pg="+pg+"&t="+t+"&wd="+wd,
 		        type:"get",
 		        dataType:"json",
 		        success: function(data) {
