@@ -39,7 +39,6 @@
 		var pg=1;
 		if (getString("wd")!=null){
 		  var wd=getString("wd");
-			alert(getString("wd"));
 		}else{
 			var wd="";
 		}
@@ -81,7 +80,7 @@
 		function getString(name) {
 				    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
 				    var r = window.location.search.substr(1).match(reg);
-				    if (r != null) return unescape(r[2]); return null;
+				    if (r != null) return r[2]; return null;
 			}
 	</script>
 </body>
