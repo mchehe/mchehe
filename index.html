@@ -23,7 +23,7 @@
 	<script id="nav-boxtmpl" type="text/x-dot-template">
 	<ul>
 	{{ for(var key in it) { }}
-	<li class="nav1"><a data-id="{{= it[key]["type_id"] }}" href="javascript:void(0)">{{= it[key]["type_name"] }}</a></li>
+	<li class="nav1"><a href="javascript:void(0)" onClick="classData('{{= it[key]["type_id"] }}')">{{= it[key]["type_name"] }}</a></li>
 	{{ } }}
 	</ul>
 	</script>
@@ -66,9 +66,9 @@
 		  pg++;
 		  getData(pg,t,wd);
 		});
-		$(".nav1 a").click(function(){
-		  getData(pg,t,wd);
-		});
+		function classData(t){
+		   getData(pg,t,wd);
+		};
 		$(".nav-button").click(function(){
 		  $("nav").slideToggle();
 		});
