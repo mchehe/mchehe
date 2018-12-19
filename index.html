@@ -64,10 +64,10 @@
 		}
 		$(".page-next").click(function(){
 		  pg++;
-		  	getData(pg);
+		  getData(pg,t,wd);
 		});
 		$(".nav1 a").click(function(){
-		  getData(pg,t);
+		  getData(pg,t,wd);
 		});
 		$(".nav-button").click(function(){
 		  $("nav").slideToggle();
