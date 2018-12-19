@@ -32,6 +32,8 @@ nav{
 }
 .search{
 	line-height: 35px;
+	float: right;
+	hight:100%;
 }
 .clear{
 	clear: both;
