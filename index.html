@@ -37,9 +37,9 @@
 	<script type="text/javascript">
 		var pg=1;
 		getData(pg);
-		function getData(pg){
+		function getData(pg,t,wd){
 			$.ajax({
-		        url:"https://dy.26an.cn/api.php/provide/vod/?ac=detail&pg="+pg,
+		        url:"https://dy.26an.cn/api.php/provide/vod/?ac=detail&pg="+pg+"&t="+t+"&wd="+wd,
 		        type:"get",
 		        dataType:"json",
 		        success: function(data) {
@@ -63,6 +63,9 @@
 		$(".page-next").click(function(){
 		  pg++;
 		  	getData(pg);
+		});
+		$(".nav1 a").click(function(){
+		  getData(pg,t);
 		});
 		$(".nav-button").click(function(){
 		  $("nav").slideToggle();
