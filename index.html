@@ -13,7 +13,7 @@
 	<header>
 		<div class="nav-button" data-fancynav-animation="slide-along"><i class="icon-list-bullet"></i></div>
 		<nav id="nav-box"></nav>
-		<div class="search"><input text="search" /></div>
+		<div class="search"><input type="search" name="wd"/><i class="icon-search"></i></div>
 	</header>
 	<div id="interpolation" class="vod-list"></div>
 	<div class="clear"></div>
@@ -42,7 +42,7 @@
 		getData(pg,t,wd);
 		function getData(pg,t,wd){
 			$.ajax({
-		        url:"https://dy.26an.cn/api.php/provide/vod/?ac=detail&pg="+pg+"&t="+t+"&wd="+wd,
+		        url:"https://dy.26an.cn/api.php/provide/vod/?ac=detail&pg="+pg+"&t="+t+"&wd="+getString(wd),
 		        type:"get",
 		        dataType:"json",
 		        success: function(data) {
