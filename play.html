@@ -1,1 +1,53 @@
-1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>播放</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/all.css">
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/dot/2.0.0-beta.0/doT.min.js"></script>
+</head>
+<body>
+	<div class="playbox"><iframe id="play" src="" frameborder="0" height="100%" width="100%" scrolling="no" allowfullscreen="true"></iframe></div>
+	<div id="interpolation" class="play-list"></div>
+	<script id="interpolationtmpl" type="text/x-dot-template">
+	{{ for(var key in it) { }}
+		<a class="juji" href="javascript:void(0)" onClick="playVideo('{{= it[key][1] }}')">{{= it[key][0] }}</a>
+	{{ } }}
+	</script>
+	<script type="text/javascript">
+		$.ajax({
+        url:"https://dy.26an.cn/api.php/provide/vod/?ac=detail&ids="+getQueryString("id"),
+        type:"get",
+        dataType:"json",
+        success: function(data) {
+            var vod_play=data.list[0]["vod_play_url"];
+            var list=vod_play.split('#');
+            var vod = [];
+            for ( var i = 0; i <list.length; i++){
+			    var juji=list[i].split('$');
+			    vod[i]=juji;
+			}
+            var evalText = doT.template($("#interpolationtmpl").text());
+			$("#interpolation").html(evalText(vod));
+			document.getElementById("play").src = "http://api.26an.cn:2019/api/m3u8.php?url="+vod[0][1]; 
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+            alert(XMLHttpRequest.status);
+            alert(XMLHttpRequest.readyState);
+            alert(textStatus);
+        },
+    })
+	function getQueryString(name) {
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		    var r = window.location.search.substr(1).match(reg);
+		    if (r != null) return unescape(r[2]); return null;
+	}
+	function playVideo(url){
+		document.getElementById("play").src = "https://dy.26an.cn/api/m3u8.php?url="+url;
+	}
+	</script>
+</body>
+</html>
