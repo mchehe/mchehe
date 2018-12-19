@@ -32,7 +32,7 @@
 			}
             var evalText = doT.template($("#interpolationtmpl").text());
 			$("#interpolation").html(evalText(vod));
-			document.getElementById("play").src = "http://api.26an.cn:2019/api/m3u8.php?url="+vod[0][1]; 
+			document.getElementById("play").src = "https://dy.26an.cn/api/m3u8.php?url="+vod[0][1]; 
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
             alert(XMLHttpRequest.status);
