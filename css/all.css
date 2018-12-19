@@ -28,13 +28,10 @@ nav{
 	margin-left: 2px;
 	font-size: 28px;
 	line-height: 40px;
+	float: left;
 }
 .search{
-	width: 40px;
-	height: 40px;
-	margin-left: 2px;
-	font-size: 28px;
-	line-height: 40px;
+	line-height: 35px;
 }
 .clear{
 	clear: both;
