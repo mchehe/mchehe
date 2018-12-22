@@ -14,6 +14,7 @@ header{
 	border-bottom:1px solid #B0B0B0;
 	background: #FCFCFC;
 	z-index:99999;
+	position: fixed;
 }
 nav{
 	width: 50%;
@@ -42,6 +43,7 @@ nav{
 }
 .vod-list{
 	float: left;
+	margin-top:60px;
 }
 .list{
 	float: left;
