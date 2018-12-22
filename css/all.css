@@ -26,7 +26,8 @@ nav{
     	position: fixed;
     	bottom: 0px;
     	top: 0px;
-    	display: none;
+	left:-30em;
+    	transition: left linear 0.5s;
 }
 .nav-button{
 	width: 40px;
