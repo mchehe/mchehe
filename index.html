@@ -40,6 +40,7 @@
 	<script type="text/javascript">
 		layer.load(2);
 		var pg=1;
+		var cd=0;
 		var jixu=true;
 		if (getString("wd")!=null){
 		  var wd=getString("wd");
@@ -83,7 +84,15 @@
 		   getData(pg,t,wd);
 		};
 		$(".nav-button").click(function(){
-		  $("nav").slideToggle();
+		  if(cd==0){
+			$("#vod-list").css({"left":"0"});
+			$("body").css("overflow","hidden");
+			cd++;
+		    }else{
+			$("#vod-list").css({"left":"-30rem"});
+			$("body").css("overflow","scroll");
+			cd--;
+		    }
 		});
 		$(window).scroll(
 		function() {
