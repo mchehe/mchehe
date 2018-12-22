@@ -101,6 +101,7 @@ i.icon-user {
 .play-list{
 	padding: 0 0 2%;
 	background: #FCFCFC;
+	float:left;
 }
 .play-list a{
 	border: 1px #ddd solid;
