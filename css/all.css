@@ -23,7 +23,9 @@ nav{
     	border-top: 1px solid #B0B0B0;
     	background: #FCFCFC;
     	margin-top: 40px;
-    	position: absolute;
+    	position: fixed;
+    	bottom: 0px;
+    	top: 0px;
     	display: none;
 }
 .nav-button{
