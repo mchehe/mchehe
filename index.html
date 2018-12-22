@@ -86,11 +86,11 @@
 		$(".nav-button").click(function(){
 		  if(cd==0){
 			$("nav").css({"left":"0"});
-			$(".vod-list").css("overflow","hidden");
+			$('html,body').css("overflow","hidden");
 			cd++;
 		    }else{
 			$("nav").css({"left":"-100%"});
-			$(".vod-list").css("overflow","");
+			$('html,body').css("overflow","");
 			cd--;
 		    }
 		});
