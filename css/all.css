@@ -99,21 +99,19 @@ i.icon-user {
 	margin-bottom: 20px;
 }
 .play-list{
-	margin-top: 10px;
-	border:1px solid #B0B0B0;
+	padding: 0 0 2%;
 	background: #FCFCFC;
-	margin:0 auto;
-	/*float: left;*/
 }
-.play-list .juji{
-	width: 50px;
-	height: 50px;
-	/*float: left;*/
-	line-height: 50px;
-	margin:0 auto;
-}
-.play-list .juji:hover{
-	background: #EDEDED;
+.play-list a{
+	border: 1px #ddd solid;
+    	width: 22.5%;
+    	text-align: center;
+    	display: block;
+    	float: left;
+    	line-height: 2rem;
+    	margin-left: 2%;
+    	margin-top: 3%;
+    	font-size: 0.8rem;
 }
 /*PAGE*/
 .page{
