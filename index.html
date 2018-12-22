@@ -55,7 +55,7 @@
 		        dataType:"json",
 		        success: function(data) {
 				var classText = doT.template($("#nav-boxtmpl").text());
-				$("#nav-box").append(classText(data.class));
+				$("#nav-box").html(classText(data.class));
 		        	var list = data.list;
 		        	if (list.length>0){
 			            var evalText = doT.template($("#interpolationtmpl").text());
