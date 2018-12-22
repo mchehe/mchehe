@@ -36,6 +36,16 @@ nav{
 	line-height: 40px;
 	float: left;
 }
+#nav-box ul{
+	margin:10px;
+}
+li.nav1 {
+    width: 33.333333%;
+    height: 50px;
+    float: left;
+    text-align: center;
+    line-height: 50px;
+}
 .search{
 	margin: 0 auto;
 	line-height: 40px;
