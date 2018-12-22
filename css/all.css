@@ -94,14 +94,12 @@ i.icon-user {
 }
 /*播放页*/
 .playbox{
-	width: 80%;
 	height: 400px;
 	margin:0 auto;
 	margin-bottom: 20px;
 }
 .play-list{
 	margin-top: 10px;
-	width: 80%;
 	border:1px solid #B0B0B0;
 	background: #FCFCFC;
 	margin:0 auto;
