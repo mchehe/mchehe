@@ -53,15 +53,15 @@
 		        type:"get",
 		        dataType:"json",
 		        success: function(data) {
-				jixu=true;
-				layer.closeAll('loading');
-				console.log(1);
 				var classText = doT.template($("#nav-boxtmpl").text());
 				$("#nav-box").append(classText(data.class));
 		        	var list = data.list;
 		        	if (list.length>0){
 			            var evalText = doT.template($("#interpolationtmpl").text());
-						$("#interpolation").append(evalText(list)); 
+				    $("#interpolation").append(evalText(list)); 
+				    jixu=true;
+				    layer.closeAll('loading');
+				    console.log(1);
 						
 					} else{
 						$(".page-next").text("没有更多");
