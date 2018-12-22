@@ -48,6 +48,11 @@ input[type="search"] {
     outline: none;
     text-indent: 5px;
 }
+i.icon-user {
+    float: right;
+    line-height: 40px;
+    margin-right: 10px;
+}
 .clear{
 	clear: both;
 	height: 20px;
