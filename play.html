@@ -15,7 +15,7 @@
 	<div id="interpolation" class="play-list"></div>
 	<script id="interpolationtmpl" type="text/x-dot-template">
 	{{ for(var key in it) { }}
-		<a class="juji" href="javascript:void(0)" onClick="playVideo('{{= it[key][1] }}')"><span class="list-name">{{= it[key][0] }}</span></a>
+		<a class="juji" href="javascript:void(0)" onClick="playVideo('{{= it[key][1] }}')"><div class="list-name">{{= it[key][0] }}</div></a>
 	{{ } }}
 	</script>
 	<script type="text/javascript">
