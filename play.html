@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/all.css">
+	<link href="https://cdn.bootcss.com/layer/2.3/skin/layer.css" rel="stylesheet">
 	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdn.bootcss.com/dot/2.0.0-beta.0/doT.min.js"></script>
 </head>
@@ -14,7 +15,7 @@
 	<div id="interpolation" class="play-list"></div>
 	<script id="interpolationtmpl" type="text/x-dot-template">
 	{{ for(var key in it) { }}
-		<a class="juji" href="javascript:void(0)" onClick="playVideo('{{= it[key][1] }}')">{{= it[key][0] }}</a>
+		<a class="juji" href="javascript:void(0)" onClick="playVideo('{{= it[key][1] }}')"><button class="layui-btn">{{= it[key][0] }}</button></a>
 	{{ } }}
 	</script>
 	<script type="text/javascript">
