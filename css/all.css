@@ -35,9 +35,18 @@ nav{
 	float: left;
 }
 .search{
-	line-height: 35px;
+	margin: 0 auto;
+	line-height: 40px;
 	float: right;
-	hight:100%;
+	width: 70%;
+}
+input[type="search"] {
+    font-size: 20px;
+    border-style: none;
+    border: 1px solid #DBDBDB;
+    border-radius: 10px;
+    outline: none;
+    text-indent: 5px;
 }
 .clear{
 	clear: both;
