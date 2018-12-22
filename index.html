@@ -85,11 +85,11 @@
 		};
 		$(".nav-button").click(function(){
 		  if(cd==0){
-			$("#vod-list").css({"left":"0"});
+			$("nav").css({"left":"0"});
 			$("body").css("overflow","hidden");
 			cd++;
 		    }else{
-			$("#vod-list").css({"left":"-30rem"});
+			$("nav").css({"left":"-30rem"});
 			$("body").css("overflow","scroll");
 			cd--;
 		    }
