@@ -40,9 +40,9 @@
 </head>
 <body>
 	<div class="title">
-        <span class="title-img"><img src="https://p3-dy.bytecdn.cn/aweme/1080x1080/fbe4000555066bd6d8a5.jpeg" alt="" /></span>
-        <span class="title-name">笑料搜罗员</span>
-        <span class="title-desc">原来是这样用的</span>
+        <span class="title-img" id="title-img"><img src="https://p3-dy.bytecdn.cn/aweme/1080x1080/fbe4000555066bd6d8a5.jpeg" alt="" /></span>
+        <span class="title-name" id="title-name">笑料搜罗员</span>
+        <span class="title-desc" id="title-desc">原来是这样用的</span>
     	</div>
 	<video id="myvideo" src="#"  controls="controls" autoplay></video>
 	<script type="text/javascript">
@@ -59,9 +59,9 @@
         });
         function play() {
             video.src = vList[curr]["video"]["play_addr"]["url_list"][0];
-	    $(".title-img").src(vList[curr]["avatar_larger"]["url_list"][0]);
-	    $(".title-name").text(vList[curr]["nickname"]);
-	    $(".title-desc").text(vList[curr]["desc"]);
+	    document.getElementById("title-img").src(vList[curr]["avatar_larger"]["url_list"][0]);
+	    document.getElementById("title-name").text(vList[curr]["nickname"]);
+	    document.getElementById("title-desc").text(vList[curr]["desc"]);
             video.load();
             //video.play();
             curr++;
