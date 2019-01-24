@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>电影</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css" media="all">
+	    *{
+	        padding: 0;
+	        margin: 0;
+	    }
+	    #myvideo{
+	        position: fixed;
+	        width: 100%;
+	        height: 100%;
+	    }
+	</style>
+</head>
+<body>
+	<video  id="myvideo" src="#"  controls="controls" autoplay></video>
+	<script type="text/javascript">
+	    var vList=new Array();
+		getData();
+		$(document).ready(function(){
+                play();
+            });
+        var vLen = vList.length;
+        var curr = 0;
+        var video = document.getElementById("myvideo");    
+        video.addEventListener("ended", function(){
+            play();
+        });
+        function play() {
+            video.src = vList[curr]["video"]["play_addr"]["url_list"][0];
+            video.load();
+            //video.play();
+            curr++;
+            if(curr >= vLen){
+                getData(); //刷新数据
+            }
+         
+        }
+		function getData(){
+			$.ajax({
+		        url:"https://dy.26an.cn/douyin/webdy.php",
+		        async: false,
+		        type:"get",
+		        dataType:"json",
+		        success: function(data) {
+		            vList=data;
+		            vLen = vList.length;
+                    curr = 0;
+                    video = document.getElementById("myvideo");
+		            console.log(vList);
+		        },
+		        error: function(XMLHttpRequest, textStatus, errorThrown) {
+		            alert(XMLHttpRequest.status);
+		            alert(XMLHttpRequest.readyState);
+		            alert(textStatus);
+		        },
+		    });
+		}
+		$(window).scroll(
+		function() {
+		var scrollTop = $(this).scrollTop();
+		var scrollHeight = $(document).height();
+		var windowHeight = $(this).height();
+		var cha=scrollHeight-scrollTop-windowHeight;
+		if (cha<1000) {
+		play();
+		}
+		});
+		
+		document.onkeydown=function(event){
+            var e = event || window.event || arguments.callee.caller.arguments[0];
+            console.log(e.keyCode);
+            if(e && e.keyCode==39){ // 按 Esc 
+                play();
+              }
+            if(e && e.keyCode==37){ // 按 F2 
+                 play();
+               }            
+        }; 
+	</script>
+</body>
+</html>
