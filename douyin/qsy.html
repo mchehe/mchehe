@@ -1,28 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>播放</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
-	<link href="https://cdn.bootcss.com/layer/2.3/skin/layer.css" rel="stylesheet">
-	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>抖音去水印</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap-table/1.13.1/bootstrap-table.min.css" rel="stylesheet">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
 </head>
 <body>
-	
-	<script type="text/javascript">
-		$.ajax({
-        url:"https://dy.26an.cn/douyin/dyjx.php",
-        data: {url:$("#username").val()},
-        type:"get",
-        dataType:"json",
-        success: function(data) {
-          console.log(data);
-			}
-	function getQueryString(name) {
-		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-		    var r = window.location.search.substr(1).match(reg);
-		    if (r != null) return unescape(r[2]); return null;
-	}
-	</script>
+<div class="container">
+    <div class="jumbotron">
+        <h1>抖音短视频在线解析</h1>
+        <p>完美还原视频的最初模样~</p>
+    </div>
+    <input class="form-control" type="text" id="url" placeholder="请将APP里复制的视频链接粘贴到这里"><br>
+    <button type="submit" class="btn btn-success btn-lg btn-block" id="magic">点击还原！</button><br>
+    <div id="str"></div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#magic').click(function(){
+            layer.load(1, {shade: [0.1,'#fff']});
+            $.ajax({
+                type: "POST",
+                url: "https://dy.26an.cn/douyin/dyjx.php",
+                dataType: "json",
+                data:{url:$("#url").val()},
+                success: function(data){
+                    layer.closeAll('loading');
+                    $("#str").html('<input class="form-control" type="text" id="str" value='+data.data+'>');
+                },
+                error: function(error) {
+                    layer.closeAll('loading');
+                    layer.msg('出错了，请再试一下！');
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
+
