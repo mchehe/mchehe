@@ -59,9 +59,6 @@
         });
         function play() {
             video.src = vList[curr]["video"]["play_addr"]["url_list"][0];
-	    document.getElementById("title-img").src(vList[curr]["avatar_larger"]["url_list"][0]);
-	    document.getElementById("title-name").text(vList[curr]["nickname"]);
-	    document.getElementById("title-desc").text(vList[curr]["desc"]);
             video.load();
             //video.play();
             curr++;
