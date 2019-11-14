@@ -27,12 +27,12 @@
             layer.load(1, {shade: [0.1,'#fff']});
             $.ajax({
                 type: "POST",
-                url: "https://dy.26an.cn/douyin/dyjx.php",
+                url: "http://admin.xinyan.shop/api/douyin.php",
                 dataType: "json",
                 data:{url:$("#url").val()},
                 success: function(data){
                     layer.closeAll('loading');
-                    $("#str").html('<input class="form-control" type="text" id="str" value='+data.data+'>');
+                    $("#str").html('<input class="form-control" type="text" id="str" value='+data.data['videourl']+'>');
                 },
                 error: function(error) {
                     layer.closeAll('loading');
