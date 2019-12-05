@@ -32,10 +32,9 @@
                 data:{url:$("#url").val()},
                 success: function(data){
                     layer.closeAll('loading');
-                    if(data.data['code']==1){
+                    layer.msg(data.msg);
+                    if(data.code==1){
                         $("#str").html('<input class="form-control" type="text" id="str" value='+data.data['videourl']+'>');
-                    }else{
-                        layer.msg(data.data['msg']);
                     }
                 },
                 error: function(error) {
